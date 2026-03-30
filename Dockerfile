@@ -26,4 +26,4 @@ COPY . .
 
 EXPOSE 5001
 
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5001", "--workers", "1", "--timeout", "660", "--log-level", "info"]
+CMD gunicorn app:app --bind 0.0.0.0:${PORT:-5001} --workers 1 --timeout 660 --log-level info
